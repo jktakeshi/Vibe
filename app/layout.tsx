@@ -3,6 +3,8 @@ import { Figtree } from "next/font/google";
 import "./globals.css";
 import SideBar from "@/components/SideBar";
 import SupabaseProvider from "@/providers/SupabaseProvider";
+import UserProvider from "@/providers/UserProvider";
+import ModalProvider from "@/providers/ModalProvider";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -14,7 +16,7 @@ const font = Figtree({
 });
 
 export const metadata: Metadata = {
-  title: "Spotfy Clone",
+  title: "Vibe Music Streaming",
   description: "Listen to music!",
 };
 
@@ -27,9 +29,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <SupabaseProvider>
-          <SideBar>
-            {children}
-          </SideBar>
+          <UserProvider>
+            <ModalProvider />
+            <SideBar>
+              {children}
+            </SideBar>
+          </UserProvider>
         </SupabaseProvider>
       </body>
     </html>

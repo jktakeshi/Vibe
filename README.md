@@ -31,7 +31,7 @@ git clone https://github.com/your-username/vibe.git
 cd vibe
 ```
 
-### 2. '''Install dependencies
+### 2. Install dependencies
 ```bash
 npm install
 ```
